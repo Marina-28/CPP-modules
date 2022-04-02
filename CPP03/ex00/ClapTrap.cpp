@@ -34,9 +34,47 @@ ClapTrap & ClapTrap::operator=(const ClapTrap & other)
     this->_hit_points = other._hit_points;
     this->_energy_points = other._energy_points;
     this->_attack_damage = other._attack_damage;
+    return *this;
 }
 
 ClapTrap::~ClapTrap()
 {
     std::cout << "Destructor called\n";
 }
+
+/************************************************************************/
+
+void ClapTrap::attack(const std::string& target)
+{
+    if (_energy_points > 0)
+    {
+        std::cout << getName() << " attacks " << target;
+        std::cout << ", causing " << getAttack_damage() << " points of damage!\n";
+        _energy_points--;
+    }
+    else
+        std::cout << getName() << " doesn't have enough energy\n";
+}
+
+/**************************************************************************/
+
+std::string & ClapTrap::getName()
+{
+    return _name;
+}
+
+int & ClapTrap::getHitPoints()
+{
+    return _hit_points;
+}
+
+int & ClapTrap::getEnergyPoints()
+{
+    return _energy_points;
+}
+
+int & ClapTrap::getAttack_damage()
+{
+    return _attack_damage;
+}
+
