@@ -98,7 +98,7 @@ int & ClapTrap::getAttackDamage()
 
 void ClapTrap::getInfo()
 {
-    std::cout << "\n* Name is " << getName() << std::endl;
+    std::cout << "\n* Name " << getName() << std::endl;
     std::cout << "* Hit points " << getHitPoints() << std::endl;
     std::cout << "* Energy points " << getEnergyPoints() << std::endl;
     std::cout << "* Attack damage " << getAttackDamage() << std::endl << std::endl;
