@@ -7,5 +7,5 @@ int main()
     a.takeDamage(10);
     a.beRepaired(5);
     a.getInfo();
-
+    return (0);
 }
