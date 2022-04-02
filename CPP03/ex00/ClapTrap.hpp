@@ -26,7 +26,8 @@ public:
     std::string & getName();
     int & getHitPoints();
     int & getEnergyPoints();
-    int & getAttack_damage();
+    int & getAttackDamage();
+    void  getInfo();
 };
 
 #endif

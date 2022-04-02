@@ -49,7 +49,7 @@ void ClapTrap::attack(const std::string& target)
     if (_energy_points > 0)
     {
         std::cout << getName() << " attacks " << target;
-        std::cout << ", causing " << getAttack_damage() << " points of damage!\n";
+        std::cout << ", causing " << getAttackDamage() << " points of damage!\n";
         _energy_points--;
     }
     else
@@ -73,8 +73,15 @@ int & ClapTrap::getEnergyPoints()
     return _energy_points;
 }
 
-int & ClapTrap::getAttack_damage()
+int & ClapTrap::getAttackDamage()
 {
     return _attack_damage;
 }
 
+void ClapTrap::getInfo()
+{
+    std::cout << "Name is " << getName() << std::endl;
+    std::cout << "Hit points " << getHitPoints() << std::endl;
+    std::cout << "Hit points " << getEnergyPoints() << std::endl;
+    std::cout << "Hit points " << getAttackDamage() << std::endl;
+}
