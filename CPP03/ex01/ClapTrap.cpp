@@ -2,7 +2,7 @@
 
 ClapTrap::ClapTrap()
 {
-    std::cout << "Default constructor called\n";
+    std::cout << "ClapTrap default constructor called\n";
     _name = "ClapTrap";
     _hit_points = 10;
     _energy_points = 10;
@@ -11,7 +11,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string name)
 {
-    std::cout << "Constructor with name called\n";
+    std::cout << "ClapTrap constructor with name called\n";
     _name = name;
     _hit_points = 10;
     _energy_points = 10;
@@ -20,7 +20,7 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(const ClapTrap & other)
 {
-    std::cout << "Copy constructor called\n";
+    std::cout << "ClapTrap copy constructor called\n";
     this->_name = other._name;
     this->_hit_points = other._hit_points;
     this->_energy_points = other._energy_points;
@@ -29,7 +29,7 @@ ClapTrap::ClapTrap(const ClapTrap & other)
 
 ClapTrap & ClapTrap::operator=(const ClapTrap & other)
 {
-    std::cout << "Copy assignment operator called\n";
+    std::cout << "ClapTrap copy assignment operator called\n";
     this->_name = other._name;
     this->_hit_points = other._hit_points;
     this->_energy_points = other._energy_points;
@@ -39,7 +39,7 @@ ClapTrap & ClapTrap::operator=(const ClapTrap & other)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Destructor called\n";
+    std::cout << "ClapTrap destructor called\n";
 }
 
 /************************************************************************/
