@@ -39,19 +39,24 @@ ScavTrap & ScavTrap::operator=(const ScavTrap & other)
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "ClapTrap destructor called\n";
+    std::cout << "ScavTrap destructor called\n";
 }
 
 /************************************************************************/
 
-// void ScavTrap::attack(const std::string& target)
-// {
-//     if (_energy_points > 0 && _hit_points > 0)
-//     {
-//         std::cout << getName() << " attacks " << target;
-//         std::cout << ", causing " << getAttackDamage() << " points of damage!\n";
-//         _energy_points--;
-//     }
-//     else
-//         std::cout << getName() << " doesn't have enough energy\n";
-// }
+void ScavTrap::attack(const std::string& target)
+{
+    if (_energy_points > 0 && _hit_points > 0)
+    {
+        std::cout << "ScavTrap " << getName() << " attacks " << target;
+        std::cout << ", causing " << getAttackDamage() << " points of damage!\n";
+        _energy_points--;
+    }
+    else
+        std::cout << getName() << " doesn't have enough energy\n";
+}
+
+void ScavTrap::guardGate()
+{
+    std::cout << "ScavTrap is now in Gate keeper mode.\n";
+}
