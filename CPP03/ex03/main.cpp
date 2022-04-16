@@ -2,7 +2,8 @@
 
 int main()
 {
-    DiamondTrap a("Misha");
+    DiamondTrap a;
     a.attack("Grisha");
     a.whoAmI();
+    a.getInfo();
 }

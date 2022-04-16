@@ -19,6 +19,7 @@ public:
 	void whoAmI();
 
     std::string & getName();
+
 };
 
 #endif
