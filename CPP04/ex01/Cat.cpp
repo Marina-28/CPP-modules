@@ -27,6 +27,7 @@ Cat & Cat::operator=(const Cat & other)
 Cat::~Cat()
 {
     std::cout << "Cat destructor called\n";
+    delete ideas;
 }
 
 /************************************************************/
