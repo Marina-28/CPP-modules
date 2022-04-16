@@ -24,6 +24,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap & other)
 {
     std::cout << "DiamondTrap copy constructor called\n";
     this->_name = other._name;
+    ClapTrap::_name = other.ClapTrap::_name;
     this->_hit_points = other._hit_points;
     this->_energy_points = other._energy_points;
     this->_attack_damage = other._attack_damage;
@@ -33,6 +34,7 @@ DiamondTrap & DiamondTrap::operator=(const DiamondTrap & other)
 {
     std::cout << "DiamondTrap copy assignment operator called\n";
     this->_name = other._name;
+    ClapTrap::_name = other.ClapTrap::_name;
     this->_hit_points = other._hit_points;
     this->_energy_points = other._energy_points;
     this->_attack_damage = other._attack_damage;
