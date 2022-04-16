@@ -3,20 +3,21 @@
 DiamondTrap::DiamondTrap() 
 {
     std::cout << "DiamondTrap default constructor called\n";
-    _name = "DiamondTrap";
+    this->_name = "DiamondTrap";
     ClapTrap::_name = _name + "_clap_name";
-    _hit_points = 100;
-    _energy_points = 50;
-    _attack_damage = 30;
+    this->_hit_points = FragTrap::_hit_points;
+    this->_energy_points = ScavTrap::_energy_points;
+    this->_attack_damage = FragTrap::_attack_damage;
 }
 
 DiamondTrap::DiamondTrap(std::string name)
 {
     std::cout << "DiamondTrap constructor with name called\n";
     _name = name;
-    _hit_points = 100;
-    _energy_points = 50;
-    _attack_damage = 20;
+    ClapTrap::_name = _name + "_clap_name";
+    this->_hit_points = FragTrap::_hit_points;
+    this->_energy_points = ScavTrap::_energy_points;
+    this->_attack_damage = FragTrap::_attack_damage;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap & other)
@@ -47,17 +48,18 @@ DiamondTrap::~DiamondTrap()
 
 void DiamondTrap::attack(const std::string& target)
 {
-    if (_energy_points > 0 && _hit_points > 0)
-    {
-        std::cout << "DiamondTrap " << getName() << " attacks " << target;
-        std::cout << ", causing " << getAttackDamage() << " points of damage!\n";
-        _energy_points--;
-    }
-    else
-        std::cout << getName() << " doesn't have enough energy\n";
+    ScavTrap::attack(target);
 }
 
 void DiamondTrap::whoAmI()
 {
-    std::cout << "My name is " << getName();
+    std::cout << "DiamondTrap name is " << getName() << std::endl;
+    std::cout << "ClapTrap name is " << ClapTrap::_name << std::endl;
+}
+
+/************************************************************************/
+
+std::string & DiamondTrap::getName()
+{
+    return _name;
 }

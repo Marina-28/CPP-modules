@@ -1,21 +1,8 @@
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
-    FragTrap a;
-
-    a.attack("Gosha");
-    a.highFivesGuys();
-    a.getInfo();
-
-    ScavTrap b;
-
-    b.attack("Misha");
-    b.getInfo();
-
-    ClapTrap c;
-
-    c.attack("Zhenya");
-    c.getInfo();
+    DiamondTrap a("Misha");
+    a.attack("Grisha");
+    a.whoAmI();
 }
