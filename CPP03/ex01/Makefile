@@ -2,8 +2,6 @@ NAME	=	a.out
 
 SRCS	=	main.cpp ClapTrap.cpp
 
-HEADER	=	ClapTrap.hpp
-
 OBJS	=	${SRCS:.cpp=.o}
 
 CC		=	c++
@@ -16,7 +14,7 @@ RM		=	rm -rf
 
 all		:	${NAME}
 
-${NAME}	:	${OBJS} ${HEADER}
+${NAME}	:	${OBJS}
 			${CC} ${FLAGS} ${OBJS} -o ${NAME}
 
 clean	:
