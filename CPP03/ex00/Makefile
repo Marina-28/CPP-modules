@@ -1,28 +1,29 @@
 NAME	=	a.out
 
-SRCS	=	main.cpp ClapTrap.cpp
+SRCS	=	ClapTrap.cpp main.cpp
+
+OBJS	= 	${SRCS:%.cpp=%.o}
 
 HEADER	=	ClapTrap.hpp
 
-OBJS	=	${SRCS:.cpp=.o}
+CC		= c++
 
-CC		=	c++
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-FLAGS	=	-Wall -Werror -Wextra -std=c++98
+.PHONY	:		all clean fclean re
 
-RM		=	rm -rf
+all		:	$(NAME)
 
-.PHONY	:	all clean fclean re
+%.o 	:	%.cpp $(HEADER)
+	$(CC) $(CFLAGS) -c $< -o $@
 
-all		:	${NAME}
+$(NAME)	:	$(OBJS)
+	$(CC) $(CFLAGS) $^ -o $@
 
-${NAME}	:	${OBJS} ${HEADER}
-			${CC} ${FLAGS} ${OBJS} -o ${NAME}
+clean:
+	$(RM) $(OBJS)
 
-clean	:
-			${RM} ${OBJS}
+fclean:		clean
+	$(RM) $(NAME)
 
-fclean	:	clean
-			${RM} ${NAME}
-
-re		:	fclean all
+re:			fclean all
