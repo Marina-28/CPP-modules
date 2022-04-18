@@ -21,3 +21,6 @@
    *  Operator overloading
 * CPP03
   * Inheritance
+* CPP04
+  * Subtype polymorphism
+  * Abstract classes
