@@ -8,7 +8,7 @@ int main()
     // delete j; //should not create a leak
     // delete i;
 
-    int size = 4;
+    size_t size = 4;
     Animal *arr[size];
 
     for (size_t i = 0; i < size/2; i++)
