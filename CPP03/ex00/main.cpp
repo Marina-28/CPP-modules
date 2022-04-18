@@ -1,4 +1,4 @@
-#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
 int main()
 {
@@ -11,6 +11,7 @@ int main()
     a.takeDamage(10);
     a.beRepaired(5);
     a.getInfo();
+
     b.getInfo();
     c.getInfo();
     d.getInfo();
