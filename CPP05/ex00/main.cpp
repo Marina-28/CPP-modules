@@ -11,24 +11,24 @@ int main()
         //Bureaucrat e("Moris", 0);
         b = a;
 
-        std::cout << a.getName() << " " << a.getGrade() << std::endl;
-        std::cout << b.getName() << " " << b.getGrade() << std::endl;
-        std::cout << c.getName() << " " << c.getGrade() << std::endl;
-        std::cout << d.getName() << " " << d.getGrade() << std::endl;
+        std::cout << a;
+        std::cout << b;
+        std::cout << c;
+        std::cout << d;
 
         a.decrement();
-        std::cout << a.getName() << " " << a.getGrade() << std::endl;
+        std::cout << a;
         a.increment();
-        std::cout << a.getName() << " " << a.getGrade() << std::endl;
+        std::cout << a;
         // a.increment();
-        // std::cout << a.getName() << " " << a.getGrade() << std::endl;
+        // std::cout << a;
 
         d.increment();
-        std::cout << d.getName() << " " << d.getGrade() << std::endl;
+        std::cout << d;
         d.decrement();
-        std::cout << d.getName() << " " << d.getGrade() << std::endl;
+        std::cout << d;
         // d.decrement();
-        // std::cout << d.getName() << " " << d.getGrade() << std::endl;
+        // std::cout << d;
 
 
     }
