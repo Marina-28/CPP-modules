@@ -29,9 +29,10 @@ int main()
     try
     {
         //a.signForm(scf);
-        b.signForm(ppf);
+        //b.signForm(ppf);
         //rrf.execute(a);
-        ppf.execute(b);
+        //ppf.execute(b);
+        a.executeForm(ppf);
     }
     catch (std::exception & e)
     {

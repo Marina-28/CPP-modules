@@ -56,6 +56,26 @@ void Bureaucrat::signForm(Form & form)
     form.beSigned(*this);
 }
 
+void Bureaucrat::executeForm(Form & form)
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << "Bureaucrat " << getName() << " executed " \
+        << form.getName() << std::endl;
+    }
+    catch(std::exception & e)
+    {
+        std::cout << "Bureaucrat " << getName() << " didn't execute " \
+        << form.getName() << " because " << e.what();
+    }
+    catch(std::string ex)
+    {
+        std::cout << "Bureaucrat " << getName() << " didn't execute " \
+        << form.getName() << " because " << ex;
+    }
+}
+
 const std::string & Bureaucrat::getName() const
 {
     return _name;
