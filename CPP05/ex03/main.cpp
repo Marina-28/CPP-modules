@@ -1,38 +1,21 @@
-//#include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
-    Bureaucrat a("Boris", 146);
-    Bureaucrat b("Moris", 1);
-    /*ShrubberyCreationForm tests*/
-    // ShrubberyCreationForm scf("Home");
-    // try
-    // {
-    //     //a.signForm(scf);
-    //     b.signForm(scf);
-    //     scf.execute(a);
-    // }
+    Intern a;
+    Form *form;
+    Bureaucrat bur("Boris", 1);
+
+    form = a.makeForm("RobotomyRequestForm", "report");
+    //a.makeForm("RobotomyRequestFor", "report");
     /*RobotomyRequestForm tests*/
     // RobotomyRequestForm rrf("Report");
-    // try
-    // {
-    //     //a.signForm(scf);
-    //     b.signForm(rrf);
-    //     //rrf.execute(a);
-    //     rrf.execute(b);
-    // }
-    /*PresidentialPardonForm tests*/
-    PresidentialPardonForm ppf("Jay");
     try
     {
         //a.signForm(scf);
-        //b.signForm(ppf);
+        bur.signForm(*form);
         //rrf.execute(a);
-        //ppf.execute(b);
-        a.executeForm(ppf);
+        (*form).execute(bur);
     }
     catch (std::exception & e)
     {
@@ -42,7 +25,6 @@ int main()
     {
         std::cout << ex;
     }
-
-
+    delete form;
     return (0);
 }

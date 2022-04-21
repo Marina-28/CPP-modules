@@ -13,6 +13,7 @@ Intern::Intern(const Intern & other)
 Intern & Intern::operator=(const Intern & other)
 {
     std::cout << "Intern copy assignment operator is called\n";
+    return *this;
 }
 
 Intern::~Intern()
@@ -36,18 +37,20 @@ Form * Intern::makeForm(std::string name, std::string target)
     switch (i)
     {
     case 0:
+        std::cout << "Intern creates form " << name << std::endl;
         form = new ShrubberyCreationForm(target);
         break;
     case 1:
+        std::cout << "Intern creates form " << name << std::endl;
         form = new PresidentialPardonForm(target);
         break;
     case 2:
+        std::cout << "Intern creates form " << name << std::endl;
         form = new RobotomyRequestForm(target);
         break;
     default:
         std::cout << "Form " << name << " doesn't exist.\n";
         break;
     }
-    std::cout << "Intern creates form " << name << std::endl;
     return form;
 }
