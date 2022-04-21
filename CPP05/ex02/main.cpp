@@ -1,6 +1,8 @@
 //#include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+
 int main()
 {
     Bureaucrat a("Boris", 146);
@@ -23,22 +25,22 @@ int main()
     //     rrf.execute(b);
     // }
     /*PresidentialPardonForm tests*/
-    // RobotomyRequestForm rrf("Report");
-    // try
-    // {
-    //     //a.signForm(scf);
-    //     b.signForm(rrf);
-    //     //rrf.execute(a);
-    //     rrf.execute(b);
-    // }
-    // catch (std::exception & e)
-    // {
-    //     std::cout << e.what();
-    // }
-    // catch(std::string ex)
-    // {
-    //     std::cout << ex;
-    // }
+    PresidentialPardonForm ppf("Jay");
+    try
+    {
+        //a.signForm(scf);
+        b.signForm(ppf);
+        //rrf.execute(a);
+        ppf.execute(b);
+    }
+    catch (std::exception & e)
+    {
+        std::cout << e.what();
+    }
+    catch(std::string ex)
+    {
+        std::cout << ex;
+    }
 
 
     return (0);
