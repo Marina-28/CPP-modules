@@ -33,3 +33,16 @@ RobotomyRequestForm::~RobotomyRequestForm()
 {
     std::cout << "RobotomyRequestForm destructor is called\n";
 }
+
+/************************************************************************/
+
+void RobotomyRequestForm::execute(Bureaucrat const & executor) const
+{
+    Form::execute(executor);
+    int a = rand();
+    std::cout << "Some drilling noises.\n";
+    if (a % 2 == 0)
+        std::cout << _target << " has been robotomized successfully.\n";
+    else
+        std::cout << _target << " has not been robotomized successfully.\n";
+}
