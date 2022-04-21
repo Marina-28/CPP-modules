@@ -19,8 +19,8 @@ public:
 
     void increment();
     void decrement();
-    const std::string & getName();
-    const int & getGrade();
+    const std::string & getName() const;
+    const int & getGrade() const;
     class GradeTooHighException : public std::exception
     {
     public:

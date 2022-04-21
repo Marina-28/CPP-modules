@@ -25,8 +25,8 @@ public:
 
     const std::string & getName();
     const bool & getSignature();
-    const int & getGradeS();
-    const int & getGradeE();
+    const int& getGradeS() const;
+    const int& getGradeE() const;
 
     void beSigned(Bureaucrat &bur);
     virtual void execute(Bureaucrat const & executor) const = 0;

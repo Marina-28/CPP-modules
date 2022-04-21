@@ -51,12 +51,12 @@ void Bureaucrat::decrement()
         _grade++;
 }
 
-const std::string & Bureaucrat::getName()
+const std::string & Bureaucrat::getName() const
 {
     return _name;
 }
 
-const int & Bureaucrat::getGrade()
+const int & Bureaucrat::getGrade() const
 {
     return _grade;
 }

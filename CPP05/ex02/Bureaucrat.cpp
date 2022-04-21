@@ -61,7 +61,7 @@ const std::string & Bureaucrat::getName()
     return _name;
 }
 
-const int & Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
     return _grade;
 }
