@@ -56,12 +56,12 @@ void Bureaucrat::signForm(Form & form)
     form.beSigned(*this);
 }
 
-const std::string & Bureaucrat::getName()
+const std::string & Bureaucrat::getName() const
 {
     return _name;
 }
 
-int Bureaucrat::getGrade() const
+const int & Bureaucrat::getGrade() const
 {
     return _grade;
 }

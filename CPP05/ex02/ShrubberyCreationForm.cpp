@@ -38,24 +38,21 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-    if (executor.getGrade() <= this->getGradeE())
-    {
-        std::ofstream out;
-        out.open(_target + "_shrubbery");
-        if (!out.is_open())
-            throw "File is not opened\n";
-        out << "....._____.....\n";
-        out << "..../33333\....\n";
-        out << ".../333|3o3\...\n";
-        out << "../333o33/33\..\n";
-        out << "..|33\333o33|..\n";
-        out << "...|3o3|333|...\n";
-        out << "....\33333/....\n";
-        out << "......|||......\n";
-        out << "......|||......\n";
-        out << ".....|||||.....\n";
-        out.close();
-    }
-    
-
+    Form::execute(executor);
+    std::ofstream out;
+    out.open(_target + "_shrubbery");
+    if (!out.is_open())
+        throw "File is not opened\n";
+    out << "....._____.....\n";
+    out << "..../33333\\....\n";
+    out << ".../333|3o3\\...\n";
+    out << "../333o33/33\\..\n";
+    out << "..|33\\333o33|..\n";
+    out << "...|3o3|333|...\n";
+    out << "....\\33333/....\n";
+    out << "......|||......\n";
+    out << "......|||......\n";
+    out << ".....|||||.....\n";
+    out.close();
+    std::cout << executor.getName() << " execute form " << this->getName() << std::endl;
 }

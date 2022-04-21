@@ -40,12 +40,12 @@ Form::~Form()
 
 /**********************************************************************/
 
-const std::string & Form::getName()
+const std::string & Form::getName() const
 {
     return _name;
 }
 
-const bool & Form::getSignature()
+const bool & Form::getSignature() const
 {
     return _signature;
 }
@@ -80,6 +80,14 @@ void Form::beSigned(Bureaucrat & bur)
         std::cout << "Bureaucrat " << bur.getName() << " signed form " \
         << getName() << std::endl;
     }
+}
+
+void Form::execute(Bureaucrat const & executor) const
+{
+    if (!this->getSignature())
+        throw "Form " + _name + " is unsigned\n";
+    if (executor.getGrade() > this->getGradeE())
+        throw Bureaucrat::GradeTooLowException();
 }
 
 const char* Form::GradeTooHighException::what() const throw()

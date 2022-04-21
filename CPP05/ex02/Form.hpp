@@ -23,8 +23,8 @@ public:
     Form & operator=(const Form & other);
     virtual ~Form();
 
-    const std::string & getName();
-    const bool & getSignature();
+    const std::string & getName() const;
+    const bool & getSignature() const;
     const int& getGradeS() const;
     const int& getGradeE() const;
 
