@@ -23,10 +23,10 @@ public:
     Form & operator=(const Form & other);
     ~Form();
 
-    const std::string & getName();
-    const bool & getSignature();
-    const int & getGradeS();
-    const int & getGradeE();
+    const std::string & getName() const;
+    const bool & getSignature() const;
+    const int & getGradeS() const;
+    const int & getGradeE() const;
 
     void beSigned(Bureaucrat &bur);
 

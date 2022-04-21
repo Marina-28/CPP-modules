@@ -40,22 +40,22 @@ Form::~Form()
 
 /**********************************************************************/
 
-const std::string & Form::getName()
+const std::string & Form::getName() const
 {
     return _name;
 }
 
-const bool & Form::getSignature()
+const bool & Form::getSignature() const
 {
     return _signature;
 }
 
-const int & Form::getGradeS()
+const int & Form::getGradeS() const
 {
     return _gradeS;
 }
 
-const int & Form::getGradeE()
+const int & Form::getGradeE() const
 {
     return _gradeE;
 }
