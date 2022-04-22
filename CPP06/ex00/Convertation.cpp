@@ -126,7 +126,7 @@ void Convertation::toCharFromInt()
 void Convertation::fromChar()
 {
     _char = _data[0];
-    std::cout << "char: " << _char << std::endl;
+    std::cout << "char: '" << _char << "'\n";
     _int = static_cast<int>(_char);
     std::cout << "int: " << _int << std::endl;
     _float = static_cast<float>(_char);
@@ -194,30 +194,17 @@ void Convertation::toIntFromDouble()
 void Convertation::printDouble()
 {
     std::cout << "double: " << _double;
-    if (std::isinf(_double) || std::isnan(_double))
-        std::cout << "\n";
-
-    /*...*/
-
-    else if (std::to_string(_double).length() > 6)
-        std::cout << "\n";
-    else 
-        std::cout << ".0\n";
+        if (_data.length() < 7 &&_int == _float)
+		std::cout << ".0";
+    std::cout << "\n";
 }
 
 void Convertation::printFloat()
 {
-    //std::cout << std::to_string(_double).find('e');
     std::cout << "float: " << _float;
-    if (std::isinf(_float) || std::isnan(_float))
-        std::cout << "f\n";
-
-    /*...*/
-
-    else if (std::to_string(_float).length() > 6)
-        std::cout << "f\n";
-    else 
-        std::cout << ".0f\n";
+    if (_data.length() < 7 &&_int == _float)
+		std::cout << ".0";
+    std::cout << "f\n";
 }
 
 void Convertation::convert()
@@ -232,8 +219,8 @@ void Convertation::convert()
             _double = std::stod(_data);
             _float = static_cast<float>(_double);
             toIntFromDouble();
-            printDouble();
             printFloat();
+            printDouble();
         }
         catch(const std::exception& e)
         {
