@@ -191,20 +191,8 @@ void Convertation::toIntFromDouble()
     }
 }
 
-void Convertation::printDoubleFloat()
+void Convertation::printDouble()
 {
-    //std::cout << std::to_string(_double).find('e');
-    std::cout << "float: " << _float;
-    if (std::isinf(_float) || std::isnan(_float))
-        std::cout << "f\n";
-
-    /*...*/
-    
-    else if (std::to_string(_float).length() > 6)
-        std::cout << "f\n";
-    else 
-        std::cout << ".0f\n";
-
     std::cout << "double: " << _double;
     if (std::isinf(_double) || std::isnan(_double))
         std::cout << "\n";
@@ -215,6 +203,21 @@ void Convertation::printDoubleFloat()
         std::cout << "\n";
     else 
         std::cout << ".0\n";
+}
+
+void Convertation::printFloat()
+{
+    //std::cout << std::to_string(_double).find('e');
+    std::cout << "float: " << _float;
+    if (std::isinf(_float) || std::isnan(_float))
+        std::cout << "f\n";
+
+    /*...*/
+
+    else if (std::to_string(_float).length() > 6)
+        std::cout << "f\n";
+    else 
+        std::cout << ".0f\n";
 }
 
 void Convertation::convert()
@@ -229,19 +232,8 @@ void Convertation::convert()
             _double = std::stod(_data);
             _float = static_cast<float>(_double);
             toIntFromDouble();
-            printDoubleFloat();
-            // std::cout << "float: " << _float;
-            // if (std::isinf(_float) || std::isnan(_float) \
-            // || _data.find('.') != std::string::npos)
-            //     std::cout << "f\n";
-            // else
-            //     std::cout << ".0f\n";
-            // std::cout << "double: " << _double;
-            // if (std::isinf(_double) || std::isnan(_double) \
-            // || _data.find('.') != std::string::npos)
-            //     std::cout << "\n";
-            // else
-            //     std::cout << ".0\n";
+            printDouble();
+            printFloat();
         }
         catch(const std::exception& e)
         {

@@ -21,7 +21,8 @@ private:
 
     void toCharFromInt();
     void toIntFromDouble();
-    void printDoubleFloat();
+    void printDouble();
+    void printFloat();
 public:
     Convertation();
     Convertation(std::string data);
