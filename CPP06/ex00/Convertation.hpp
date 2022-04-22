@@ -3,18 +3,25 @@
 
 #include <iostream>
 #include <string>
+#include <cmath>
 
 class Convertation
 {
 private:
     std::string _data;
     std::string _type;
-    // bool _isPos;
-    // bool _isIntPos;
+
     char _char;
     int _int;
     double _double;
     float _float;
+
+    void defType();
+    void fromChar();
+
+    void toCharFromInt();
+    void toIntFromDouble();
+    void printDoubleFloat();
 public:
     Convertation();
     Convertation(std::string data);
@@ -22,13 +29,7 @@ public:
     Convertation & operator=(const Convertation & other);
     ~Convertation();
 
-    void defType();
     void convert();
-    void toChar();
-    void toInt();
-    void toDouble();
-    void toFloat();
-
 };
 
 #endif
