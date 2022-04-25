@@ -26,3 +26,5 @@
   * Abstract classes
  * CPP05
     * Repetition and Exceptions
+* CPP06
+    * Casts
