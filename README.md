@@ -28,3 +28,5 @@
     * Repetition and Exceptions
 * CPP06
     * Casts
+* CPP07
+    * Templates
