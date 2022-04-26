@@ -14,9 +14,9 @@ void easyfind(T &cont, int numb)
     typename T::iterator iter;
     iter = std::find(cont.begin(), cont.end(), numb);
     if (iter == cont.end())
-        std::cout << "The numb " << numb << " is not found\n.";
+        std::cout << "The numb " << numb << " is not found.\n";
     else
-        std::cout << "The numb " << numb << " is found\n.";
+        std::cout << "The numb " << numb << " is found.\n";
 }
 
 #endif
