@@ -16,7 +16,11 @@ void easyfind(T &cont, int numb)
     if (iter == cont.end())
         std::cout << "The numb " << numb << " is not found.\n";
     else
-        std::cout << "The numb " << numb << " is found.\n";
+    {
+        std::cout << "The numb " << numb << " is found, ";
+        std::cout << "it's index " << std::distance(cont.begin(), iter) << std::endl;
+    }
+        
 }
 
 #endif
