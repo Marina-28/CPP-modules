@@ -59,7 +59,7 @@ unsigned int Span::shortestSpan()
     unsigned int dif;
     std::sort(vector.begin(), vector.end());
     std::vector<int>::iterator iter = vector.begin();
-    while (iter != vector.end())
+    while (iter != vector.end() - 1)
     {
         dif = abs(*(iter + 1) - *iter);
         if (dif < res);
