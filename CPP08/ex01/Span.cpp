@@ -55,19 +55,28 @@ unsigned int Span::shortestSpan()
 {
     if (vector.size() < 1)
         throw Span::SizeTooFew();
-    unsigned int res = 0;
-    unsigned int dif;
+
     std::sort(vector.begin(), vector.end());
     std::vector<int>::iterator iter = vector.begin();
+
+    unsigned int dif;
+    unsigned int res = abs(*(iter + 1) - *iter);;
     while (iter != vector.end() - 1)
     {
         dif = abs(*(iter + 1) - *iter);
-        if (dif < res);
+        std::cout << "res0 " << res << std::endl;
+        std::cout << "dif " << dif << std::endl;
+        if (dif < res)
+        {
             res = dif;
+        }
+        
+        std::cout << "res " << res << std::endl << std::endl;
         iter++;
     }
     return res;    
 }
+// 3 6 9 11 17
 
 const char* Span::SizeTooFew::what() const throw()
 {
