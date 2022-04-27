@@ -2,5 +2,7 @@
 
 int main()
 {
+    Span a;
+    
     return 0;
 }

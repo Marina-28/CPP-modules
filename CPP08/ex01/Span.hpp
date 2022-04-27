@@ -23,6 +23,18 @@ public:
     void addNumber(int n);
     unsigned int shortestSpan();
     unsigned int longestSpan();
+
+    class SizeTooFew : public std::exception
+    {
+    public:
+        const char* what() const throw();
+    };
+    
+    class ContainerIsFull : public std::exception
+    {
+    public:
+        const char* what() const throw();
+    };
 };
 
 
