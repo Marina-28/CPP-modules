@@ -21,6 +21,7 @@ public:
     ~Span();
 
     void addNumber(int n);
+    void addFewNumber(int len, int *n);
     unsigned int shortestSpan();
     unsigned int longestSpan();
 
@@ -31,6 +32,12 @@ public:
     };
     
     class ContainerIsFull : public std::exception
+    {
+    public:
+        const char* what() const throw();
+    };
+
+    class ContainerTooSmall : public std::exception
     {
     public:
         const char* what() const throw();

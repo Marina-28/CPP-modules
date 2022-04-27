@@ -36,10 +36,18 @@ Span::~Span()
 
 void Span::addNumber(int n)
 {
-    if (vector.size() >= N)
+    if (vector.size() == N)
         throw Span::ContainerIsFull();
     else
         vector.push_back(n);
+}
+
+void Span::addFewNumber(int len, int *n)
+{
+    if (vector.size() + len > N)
+        throw Span::ContainerTooSmall();
+    else
+        vector.insert(vector.end(), n, n + len);
 }
 
 unsigned int Span::longestSpan()
@@ -64,14 +72,10 @@ unsigned int Span::shortestSpan()
     while (iter != vector.end() - 1)
     {
         dif = abs(*(iter + 1) - *iter);
-        std::cout << "res0 " << res << std::endl;
-        std::cout << "dif " << dif << std::endl;
         if (dif < res)
         {
             res = dif;
         }
-        
-        std::cout << "res " << res << std::endl << std::endl;
         iter++;
     }
     return res;    
@@ -86,4 +90,9 @@ const char* Span::SizeTooFew::what() const throw()
 const char* Span::ContainerIsFull::what() const throw()
 {
     return "The container is full\n";
+}
+
+const char* Span::ContainerTooSmall::what() const throw()
+{
+    return "The container too small\n";
 }
