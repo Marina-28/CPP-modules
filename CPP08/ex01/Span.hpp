@@ -1,4 +1,4 @@
-#ifndef SPAN_HPPP
+#ifndef SPAN_HPP
 #define SPAN_HPP
 
 
