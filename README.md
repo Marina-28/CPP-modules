@@ -30,3 +30,7 @@
     * Casts
 * CPP07
     * Templates
+* CPP08
+    * Templated containers
+    * Iterators
+    * Algorithms
