@@ -8,11 +8,13 @@ Intern::Intern()
 Intern::Intern(const Intern & other)
 {
     std::cout << "Intern copy constructor is called\n";
+    (void)other;
 }
 
 Intern & Intern::operator=(const Intern & other)
 {
     std::cout << "Intern copy assignment operator is called\n";
+    (void)other;
     return *this;
 }
 
@@ -26,7 +28,7 @@ Form * Intern::makeForm(std::string name, std::string target)
     std::string forms[3] = {"ShrubberyCreationForm", \
     "PresidentialPardonForm", "RobotomyRequestForm"};
     int i = 0;
-    Form *form;
+    Form *form = NULL;
 
     while (i < 3)
     {
